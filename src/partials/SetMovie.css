@@ -1,0 +1,82 @@
+.row-single {
+	margin-bottom: 50px;
+}
+
+.row-single h2 {
+	padding: 20px 2%;
+	font-weight: initial;
+}
+
+.row-single .row-arrow-left {
+	z-index: 888;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	font-size: 30px;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	width: 50px;
+	background-color: rgba(0, 0, 0, 0.486);
+	height: 100%;
+	opacity: 0;
+	cursor: pointer;
+	transition: 0.2s;
+	outline: 0;
+}
+
+.row-single .row-arrow-right {
+	z-index: 888;
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: flex;
+	font-size: 30px;
+	cursor: pointer;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	width: 50px;
+	background-color: rgba(0, 0, 0, 0.486);
+	height: 100%;
+	opacity: 0;
+	transition: 0.5s;
+	outline: 0;
+}
+
+.row-wrapper {
+	position: relative;
+	padding: 30px;
+	overflow-x: hidden;
+}
+
+.row-wrapper:hover .row-arrow-right {
+	display: flex;
+	opacity: 1;
+}
+
+.row-wrapper:hover .row-arrow-left {
+	display: flex;
+	opacity: 1;
+}
+
+.row {
+	transition: 0.5s ease;
+}
+
+.row-image {
+	display: inline-block;
+	width: 180px;
+	transform: scale(0.9);
+	cursor: pointer;
+	transition: 0.2s ease;
+}
+
+.row-image:hover {
+	transform: scale(1);
+}
+
+.row-image img {
+	width: 100%;
+}
