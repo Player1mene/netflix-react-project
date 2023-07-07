@@ -69,11 +69,6 @@ function App() {
           <p>Feito de <span role="img" alt="coração">💖</span> por Gabriel da Silva / Player1 <br/> Todos os direitos de imagem reservados a Netflix <br/>Agradecimentos a Themoviedb.org e sua API magnífica.</p>
       </footer>
 
-      {lister.length <= 0 &&
-        <div className='loading'>
-            <img src="https://i.gifer.com/origin/36/36527397c208b977fa3ef21f68c0f7b2.gif"/>
-      </div>
-      }   
     
     </div>
   );
