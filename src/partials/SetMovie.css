@@ -78,7 +78,7 @@
 	height: 90%;
 	vertical-align: middle;
 	text-align: center;
-	transform: scale(0.98);
+	transform: scale(0.94);
 	transition: 0.2s ease;
 }
 
@@ -123,12 +123,16 @@
 	transition: 0.2s ease;
 }
 
+.row-none:hover {
+	transform: scale(0.98);
+}
+
 .row-none img {
 	display: none;
 }
 
 .row-image:hover {
-	transform: scale(1);
+	transform: scale(0.98);
 }
 
 .controller {
