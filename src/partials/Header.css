@@ -9,9 +9,18 @@
     justify-content: space-between;
     align-items: center;
     align-content: center;
-    height: 70px;
+    height: 60px;
     background-color: transparent;
     transition: 0.2s;
+}
+
+.logo--app-mobile {
+    display: none;
+    width: 50px;
+}
+
+.logo--app-mobile img {
+    width: 100%;
 }
 
 .logo--app {
@@ -20,4 +29,35 @@
 
 .logo--app img {
     width: 100%;
+}
+
+@media screen and (max-width: 40rem) {
+
+    .logo--app {
+        display: none;
+    }
+
+
+    .logo--app-mobile {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+    }
+
+    .header {
+    z-index: 999;
+    width: 100%;
+    position: fixed;
+    padding: 0 2%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    height: 60px;
+    background-color: transparent;
+    transition: 0.2s;
+}
+
 }

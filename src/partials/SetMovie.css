@@ -1,24 +1,27 @@
 .row-single {
-	margin-bottom: 50px;
+	margin: 0 !important;
+	padding: 0 !important;
 }
 
-.row-single h2 {
-	padding: 20px 2%;
+.row-single .title {
+	margin-top: 50px;
+	margin-bottom: -20px;
+	padding: 12px 0px 2% 2%;
+	font-size: 16px;
 	font-weight: initial;
 }
 
 .row-single .row-arrow-left {
 	z-index: 888;
 	position: absolute;
-	top: 0;
 	left: 0;
 	display: flex;
-	font-size: 30px;
+	font-size: 40px;
 	justify-content: center;
 	align-items: center;
 	align-content: center;
-	width: 50px;
-	background-color: rgba(0, 0, 0, 0.486);
+	width: 40px;
+	background-color: rgba(0, 0, 0, .6);
 	height: 100%;
 	opacity: 0;
 	cursor: pointer;
@@ -29,16 +32,15 @@
 .row-single .row-arrow-right {
 	z-index: 888;
 	position: absolute;
-	top: 0;
 	right: 0;
 	display: flex;
-	font-size: 30px;
+	font-size: 40px;
 	cursor: pointer;
 	justify-content: center;
 	align-items: center;
 	align-content: center;
-	width: 50px;
-	background-color: rgba(0, 0, 0, 0.486);
+	width: 40px;
+	background-color: rgba(0, 0, 0, .6);
 	height: 100%;
 	opacity: 0;
 	transition: 0.5s;
@@ -47,7 +49,6 @@
 
 .row-wrapper {
 	position: relative;
-	padding: 30px;
 	overflow-x: hidden;
 }
 
@@ -62,21 +63,191 @@
 }
 
 .row {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	transition: 0.5s ease;
+	padding: 0 20px;
+	height: auto;
 }
 
 .row-image {
+	position: relative;
 	display: inline-block;
-	width: 180px;
-	transform: scale(0.9);
-	cursor: pointer;
+	width: 280px;
+	height: 90%;
+	vertical-align: middle;
+	text-align: center;
+	transform: scale(0.98);
 	transition: 0.2s ease;
+}
+
+.row-info {
+	position: absolute;
+	width: 100%;
+	opacity: 0;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border-radius: 10px;
+	transition: 0.2s;
+}
+
+.row-info:hover  {
+	opacity: 1;
+}
+
+.row-info p {
+	background: linear-gradient(180deg, rgba(17,17,17,0) 0%, rgba(17,17,17,0.5137640277991133) 0%);
+	width: 100%;
+	padding: 10px 0;
+	border-left-top-radius: 6px;
+	border-right-top-radius: 6px;
+}
+
+.row-image h2 {
+	vertical-align: middle;
+	height: 100%;
+	display: inline-block;
+	background-color: #111;
+}
+
+.row-none {
+	display: inline-block;
+	width: 280px;
+	height: 90%;
+	vertical-align: middle;
+	text-align: center;
+	transform: scale(0.98);
+	transition: 0.2s ease;
+}
+
+.row-none img {
+	display: none;
 }
 
 .row-image:hover {
 	transform: scale(1);
 }
 
+.controller {
+	padding:10px 5%;
+	background-color: #111;
+	display: flex;
+	gap: 20px;
+}
+
+.controller i {
+	width: 30px;
+	height: 30px;
+	border-radius: 100%;
+	border: 2px solid white;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: 0.2s;
+}
+
+.controller i:hover {
+	background-color: white;
+	color: #111;
+}
+
+.controller .fa-play {
+	padding: 5px 7px;
+}
+
+.controller .fa-plus {
+	padding: 5px 6px;
+}
+
+
+
 .row-image img {
 	width: 100%;
+	height: 100%;
+	border-radius: 6px;
+	object-fit: cover;
+}
+
+
+@media screen and (max-width: 40rem){
+	::-webkit-scrollbar {
+		-webkit-appearance: none;
+	}
+
+
+	.row-single .title {
+	margin-top: 10px;
+	margin-bottom: 0px;
+	padding: 12px 0px 3% 3%;
+	font-size: 16px;
+	font-weight: initial;
+	}
+
+	.row-wrapper {
+		padding: 2px 0;
+		position: relative;
+		overflow-x: scroll;
+		overflow-y: hidden;
+
+	
+	}
+
+	.row-single .row-arrow-left {
+		display: none !important;
+	}
+
+
+	.row-single .row-arrow-right {
+		display: none !important;
+	}
+
+	.row-image {
+	position: relative;
+	display: inline-block;
+	width: 280px;
+	height: 90%;
+	vertical-align: middle;
+	text-align: center;
+	transform: scale(0.94);
+	transition: 0.2s ease;
+}
+
+	.row-image:hover {
+	transform: scale(0.94);
+}
+
+
+.controller .fa-thumbs-up {
+	display: none;
+}
+
+.controller .fa-thumbs-down {
+	display: none;
+}
+
+
+
+.controller {
+	padding:10px 5%;
+	height: 100%;
+	background: linear-gradient(180deg, rgba(17,17,17,0.36488762330473135) 0%, rgba(17,17,17,0.23005616263057405) 0%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.controller .fa-play {
+	width: 60px;
+	height: 60px;
+	text-align: center;
+	align-content: center;
+	justify-content: center;
+}
+
 }

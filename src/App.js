@@ -3,9 +3,11 @@ import './App.css';
 import SetMovie from './partials/SetMovies';
 import Header from './partials/Header';
 import FilterData from './partials/FilterData';
+import Loading from './partials/Loading'
 import './partials/SetMovie.css';
 import './partials/FilterData.css';
 import './partials/Header.css';
+import './partials/Loading.css'
 import Tmdb from './tmdb';
 
 function App() {
@@ -17,15 +19,17 @@ function App() {
   useEffect(()=>{
     const pegarTudo = async ()=> {
       let lista = await Tmdb.getLista();
-      setLister(lista)
+
 
 
       let originals = lista.filter(i=>i.slug === 'originals');
       let randomChoose = Math.floor(Math.random() * (originals[0].items.results.length - 1));
       let choose = originals[0].items.results[randomChoose];
       let chooseInfo = await Tmdb.getFilmeInfo(choose.id,'tv');
+      console.log(lister)
       console.log(chooseInfo)
       setFilterData(chooseInfo);
+      setLister(lista)
     }
     pegarTudo();
   }, [])
@@ -48,6 +52,11 @@ function App() {
     }
   }, [])
 
+
+
+  if(lister.length <= 0)
+   return <Loading/>
+  else
   return (
     <div className="App">
 
@@ -70,11 +79,6 @@ function App() {
       </footer>
 
       
-      {lister.length <= 0 &&
-        <div className='loading'>
-            <img src="https://i.gifer.com/origin/36/36527397c208b977fa3ef21f68c0f7b2.gif"/>
-      </div>
-      } 
 
     
     </div>

@@ -33,4 +33,15 @@ body,html {
   background-color: black;
 }
 
+.series {
+  margin-top: -150px;
+}
 
+
+@media screen and (max-width: 40rem){
+  
+  .series {
+  margin-top: -70px;
+}
+
+}

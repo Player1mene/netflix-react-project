@@ -1,14 +1,17 @@
 import React from 'react';
 import './Header.css';
 
-export default ({black}) =>{
+const Header = ({black}) =>{
 
     return (
-        <div className='header' style={{
+        <div className='header header-mobile' style={{
             backgroundColor: black ? 'black' : 'transparent',
         }}>
             <div className='logo--app'>
-                <img href="/" src="https://logodownload.org/wp-content/uploads/2014/10/netflix-logo-5.png" />
+                <img alt=""  href="/" src="https://logodownload.org/wp-content/uploads/2014/10/netflix-logo-5.png" />
+            </div>
+            <div className="logo--app-mobile">
+                <img alt=""  src="https://loodibee.com/wp-content/uploads/Netflix-N-Symbol-logo.png"/>
             </div>
             <div className='nav--app'>
 
@@ -16,3 +19,5 @@ export default ({black}) =>{
         </div>
     )
 }
+
+export default Header;
