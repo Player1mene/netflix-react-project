@@ -12,27 +12,24 @@ import Tmdb from './tmdb';
 
 function App() {
 
+
   const [lister, setLister] = useState([]);
   const [filterData, setFilterData] = useState(null);
   const [toogleBlack, setToogleBlack] = useState(false)
+  const [loading, setLoading] = useState(true);
 
   useEffect(()=>{
-    const pegarTudo = async ()=> {
-      let lista = await Tmdb.getLista();
-
-
-
-      let originals = lista.filter(i=>i.slug === 'originals');
-      let randomChoose = Math.floor(Math.random() * (originals[0].items.results.length - 1));
-      let choose = originals[0].items.results[randomChoose];
-      let chooseInfo = await Tmdb.getFilmeInfo(choose.id,'tv');
-      console.log(lister)
-      console.log(chooseInfo)
-      setFilterData(chooseInfo);
-      setLister(lista)
+    const onPageLoad = () =>{
+      setLoading(false);
     }
-    pegarTudo();
-  }, [])
+
+    if(document.readyState === 'complete'){
+      onPageLoad();
+    } else {
+      window.addEventListener('load',onPageLoad);
+    }
+    return () => window.addEventListener('load',onPageLoad);
+  },[])
 
 
   useEffect(()=>{
@@ -52,9 +49,28 @@ function App() {
     }
   }, [])
 
+  useEffect(()=>{
+    const pegarTudo = async ()=> {
+      let lista = await Tmdb.getLista();
 
 
-  if(lister.length <= 0)
+
+      let originals = lista.filter(i=>i.slug === 'originals');
+      let randomChoose = Math.floor(Math.random() * (originals[0].items.results.length - 1));
+      let choose = originals[0].items.results[randomChoose];
+      let chooseInfo = await Tmdb.getFilmeInfo(choose.id,'tv');
+      console.log(lister)
+      console.log(chooseInfo)
+      setFilterData(chooseInfo);
+      setLister(lista)
+    }
+    pegarTudo();
+  }, [])
+
+ 
+
+
+  if(loading || lister.length <= 0)
    return <Loading/>
   else
   return (

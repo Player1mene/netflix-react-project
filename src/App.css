@@ -34,14 +34,15 @@ body,html {
 }
 
 .series {
-  margin-top: -150px;
+  z-index: 888;
+  margin-top: -120px;
 }
 
 
 @media screen and (max-width: 40rem){
   
   .series {
-  margin-top: -70px;
+  margin-top: 0;
 }
 
 }

@@ -45,7 +45,7 @@ const SetMovie = ({titulo, items}) => {
 				}
 					<div className="row" style={{
 						marginLeft: scrollX,
-						width: !mobile ? items.results.length * 280 : items.results.length * 160,
+						width: !mobile ? items.results.length * 280 : items.results.length * 130,
 					}}>
 						{items.results.length > 0 && items.results.map((item,key)=>(
 							<div className="row-image" key={key}>

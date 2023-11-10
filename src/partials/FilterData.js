@@ -14,7 +14,7 @@ const FilterData = ({item}) => {
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
-                backgroundImage: !mobile && `url('https://image.tmdb.org/t/p/original${item.backdrop_path}')`,
+                backgroundImage: !mobile ? `url('https://image.tmdb.org/t/p/original${item.backdrop_path}')` : "",
             }}>
 
 
@@ -54,7 +54,7 @@ const FilterData = ({item}) => {
                         </div>
                         <div className='filter-single-buttons'>
                             <button className='watch'><i className="fa-solid fa-play"></i> Assistir</button>
-                            <button className='add'><span>i</span> Mais informações</button>
+                            {!mobile ? <button className='add'><span>i</span> Mais informações</button> : <button className='add'><i class="fa-solid fa-plus"></i> Minha lista</button>}
                         </div>
                     </div>
                 </div> 
